@@ -26,7 +26,7 @@ function convert(input) {
 function convertToDecimal(coordinate) {
     const { direction, degrees, minutes, seconds } = parseCoordinates(coordinate);
 
-    if (!direction || !degrees || !minutes || !seconds) {
+    if (!direction || degrees === null || minutes === null || seconds === null) {
         return "Coodenata inválida";
     }
 
@@ -45,9 +45,9 @@ function parseCoordinates(input) {
 
     if (match) {
         const direction = match[1] || null;
-        const degrees = parseInt(match[2], 10);
-        const minutes = parseInt(match[3], 10);
-        const seconds = parseInt(match[4], 10);
+        const degrees = match[2] ? parseInt(match[2], 10) : 0;
+        const minutes = match[3] ? parseInt(match[3], 10) : 0;
+        const seconds = match[4] ? parseInt(match[4], 10) : 0;
 
         return { direction, degrees, minutes, seconds };
     } else {
@@ -60,10 +60,14 @@ function buildResultTable(values) {
 
     values.forEach(coord => {
         const decimal = convertToDecimal(coord.trim());
+
+        const isValid = decimal !== null && decimal !== "Coordenada inválida";
+
         const row = $('<tr>').append(
             $('<td>').text(coord.trim()),
-            $('<td>').html(decimal !== "Invalid Coordinates" ? decimal : "<span style='color:red;'>Coordenada inválida!</span>")
+            $('<td>').html(isValid ? decimal : "<span style='color:red;'>Coordenada inválida!</span>")
         );
+
         $('#result-table tbody').append(row);
     });
 
