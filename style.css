@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background-image: url('imagens/worldmap.gif');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 10px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #0408ED;
+    margin: 0 10px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 80%;
+    max-width: 700px;
+    height: 60px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    text-align: center;
+}
+
+button#convert {
+    background-image: url('imagens/bg_button.png');
+    background-color: transparent;
+    width: 127px;
+    height: 35px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    background-size: cover;
+    display: block;
+}
+
+button#convert:hover {
+    background-image: url('imagens/bg_button_hover.png');
+}
+
+.results-container {
+    display: none;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 320px;
+    max-width: 700px;
+    text-align: center;
+}
+
+#result-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#result-table th, #result-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#result-table th {
+    background: #f0f0f0;
+    font-weight: bold;
+}

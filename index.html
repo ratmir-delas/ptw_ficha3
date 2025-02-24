@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Coordenadas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="imagens/globe.gif" alt="Globe">
+            <h1>Conversor de Coordenadas</h1>
+            <img src="imagens/globe.gif" alt="Globe">
+        </header>
+
+        <div class="form-container">
+            <textarea id="coordenates" placeholder="Digite as coordenadas..."></textarea>
+            <button id="convert">Converter</button>
+        </div>
+
+        <div class="results-container">
+            <table id="result-table">
+                <thead>
+                    <tr>
+                        <th>Entrada (graus-min-seg)</th>
+                        <th>Saída (graus decimais)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
